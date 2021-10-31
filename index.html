@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+</head>
+
+<style>
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.btn {
+	font-family: sans-serif;
+	padding: 1rem 2rem;
+	background-color: royalblue;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	transition: ease-out 0.2s;
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+</style>
+
+<body>
+<div class="container">
+<button class="btn">Click Me <em>Fast</em></button>
+</div>
+</body>
+
+<script>
+const btn = document.querySelector('.btn');
+
+btn.addEventListener('click', () => {
+	document.body.style.background = randomBg();
+})
+
+function randomBg() {
+	return `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`;
+}
+</script>
+
+</html>
